@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.sicdlab.project.dto">
+    <class name="User" table="tb_user">
+        <id name="userID" type="java.lang.String" column="userID">
+            <generator class="uuid"/>
+        </id>
+        <property name="userName" type="java.lang.String" column="userName"/>
+        <property name="password" type="java.lang.String" column="password"/>
+        <property name="telephone" type="java.lang.String" column="telephone"/>
+        <property name="email" type="java.lang.String" column="email"/>
+        <property name="birthday" type="java.util.Date" column="birthday"/>
+        <property name="sex" type="java.lang.Integer" column="sex" />
+        <property name="homePageURL" type="java.lang.String" column="homePageURL"/>
+        <property name="domainhacks" type="java.lang.String" column="domainhacks" />
+        <property name="headSculpture" type="java.lang.String" column="headSculpture"/>
+        <property name="coverURL" type="java.lang.String" column="coverURL" />
+        <property name="recievePoints" type="java.lang.String" column="recievePoints"/>
+    </class>
+</hibernate-mapping>

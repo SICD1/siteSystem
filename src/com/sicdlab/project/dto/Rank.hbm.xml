@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.sicdlab.project.dto">
+    <class name="Rank" table="tb_rank">
+        <id name="rankID" type="java.lang.String" column="rankID">
+            <generator class="uuid"/>
+        </id>
+        <property name="rankName" type="java.lang.String" column="rankName" />
+        <property name="rankClassName" type="java.lang.String" column="rankClassName" />
+        <property name="points" type="java.lang.String" column="points" />
+    </class>
+</hibernate-mapping>

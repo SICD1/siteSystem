@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.sicdlab.project.dto">
+    <class name="Pictures" table="tb_pictures">
+        <id name="pictureID" type="java.lang.String" column="pictureID">
+            <generator class="uuid"/>
+        </id>
+        <property name="pictureName" type="java.lang.String" column="pictureName" />
+        <property name="pictureDescrible" type="java.lang.String" column="pictureDescrible" />
+        <property name="pictureURL" type="java.lang.String" column="pictureURL" />
+        <property name="uploadTime" type="java.util.Date" column="uploadTime" />
+        <property name="picturesShow" type="java.lang.Boolean" column="picturesShow" />
+        <property name="browseNumber" type="java.lang.Integer" column="browseNumber" />
+    </class>
+</hibernate-mapping>

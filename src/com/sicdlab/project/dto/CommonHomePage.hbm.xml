@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.sicdlab.project.dto">
+    <class name="CommonHomePage" table="tb_commonHomePage">
+        <id name="homePageID" type="java.lang.String" column="homePageID">
+            <generator class="uuid"/>
+        </id>
+        <property name="homePageName" type="java.lang.String" column="homePageName" />
+        <property name="homePageDescrible" type="java.lang.String" column="homePageDescrible" />
+        <property name="homePageURL" type="java.lang.String" column="homePageURL" />
+    </class>
+</hibernate-mapping>

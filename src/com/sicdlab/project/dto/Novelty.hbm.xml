@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.sicdlab.project.dto">
+    <class name="Novelty" table="tb_novelty">
+        <id name="noveltyID" type="java.lang.String" column="noveltyID">
+            <generator class="uuid"/>
+        </id>
+        <property name="noveltyContent" type="java.lang.String" column="noveltyContent" />
+        <property name="noveltyTime" type="java.util.Date" column="noveltyTime" />
+        <property name="noveltyPictureURL" type="java.lang.String" column="noveltyPictureURL" />
+        <property name="noveltyHref" type="java.lang.String" column="noveltyHref" />
+        <property name="noveltyShow" type="java.lang.Boolean" column="noveltyShow" />
+        <property name="noveltyPraiseNumber" type="java.lang.Integer" column="noveltyPraiseNumber" />
+        <property name="noveltyForwardNumber" type="java.lang.Integer" column="noveltyForwardNumber" />
+        <property name="noveltyReadNumber" type="java.lang.Integer" column="noveltyReadNumber" />
+        <property name="noveltyCommentNumber" type="java.lang.Integer" column="noveltyCommentNumber" />
+        <property name="noveltyShareNumber" type="java.lang.Integer" column="noveltyShareNumber" />
+    </class>
+</hibernate-mapping>

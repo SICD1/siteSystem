@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.sicdlab.project.dto">
+    <class name="Comment" table="tb_comment">
+        <id name="commentID" type="java.lang.String" column="commentID">
+            <generator class="uuid"/>
+        </id>
+        <property name="commentContent" type="java.lang.String" column="commentContent" />
+        <property name="commentTime" type="java.util.Date" column="commentTime" />
+        <property name="commentPraiseNumber" type="java.lang.Integer" column="commentPraiseNumber" />
+        <property name="parentID" type="java.lang.String" column="parentID" />
+
+    </class>
+</hibernate-mapping>
