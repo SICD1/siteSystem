@@ -10,6 +10,8 @@ public class Browse {
     private String browseContent;
     private Date browseTime;
     private String browseURL;
+    //多个浏览记录表对应一个用户表关系
+    private User user;
 
     public String getBrowseID() {
         return browseID;
@@ -41,5 +43,13 @@ public class Browse {
 
     public void setBrowseURL(String browseURL) {
         this.browseURL = browseURL;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

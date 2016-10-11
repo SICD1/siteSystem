@@ -1,6 +1,8 @@
 package com.sicdlab.project.dto;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by maninit on 2016/10/9.
@@ -13,6 +15,11 @@ public class Pictures {
     private  Date    uploadTime;
     private  Boolean picturesShow;
     private  Integer browseNumber;
+
+    //多个照片对应一个相册
+    private  Album album;
+    //一个照片对应多个评论
+    private Set<Comment>  comments=new HashSet<Comment>();
 
     public String getPictureID() {
         return pictureID;
@@ -68,5 +75,21 @@ public class Pictures {
 
     public void setBrowseNumber(Integer browseNumber) {
         this.browseNumber = browseNumber;
+    }
+
+    public Album getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(Album album) {
+        this.album = album;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 }

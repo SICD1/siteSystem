@@ -4,12 +4,17 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.sicdlab.project.dto">
-    <class name="CommonHomePage" table="tb_commonHomePage">
-        <id name="homePageID" type="java.lang.String" column="homePageID">
+    <class name="CommonHomePage" table="tb_common_home_page">
+        <id name="homePageID" type="java.lang.String" column="home_pageid">
             <generator class="uuid"/>
         </id>
-        <property name="homePageName" type="java.lang.String" column="homePageName" />
-        <property name="homePageDescrible" type="java.lang.String" column="homePageDescrible" />
-        <property name="homePageURL" type="java.lang.String" column="homePageURL" />
+        <property name="homePageName" type="java.lang.String" column="home_page_name" />
+        <property name="homePageDescrible" type="java.lang.String" column="home_page_describle" />
+        <property name="homePageURL" type="java.lang.String" column="home_pageURL" />
+        <!-- 一个公共主页表对应多个用户表关系-->
+        <set name="user" cascade="all" inverse="true" table="tb_common_home_page_users">
+            <key column="home_pageid"/>
+            <many-to-many class="User" column="userid"/>
+        </set>
     </class>
 </hibernate-mapping>

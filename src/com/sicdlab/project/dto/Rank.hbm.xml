@@ -5,11 +5,11 @@
 
 <hibernate-mapping package="com.sicdlab.project.dto">
     <class name="Rank" table="tb_rank">
-        <id name="rankID" type="java.lang.String" column="rankID">
+        <id name="rankID" type="java.lang.String" column="rankid">
             <generator class="uuid"/>
         </id>
-        <property name="rankName" type="java.lang.String" column="rankName" />
-        <property name="rankClassName" type="java.lang.String" column="rankClassName" />
+        <property name="rankName" type="java.lang.String" column="rank_name" />
+        <property name="rankClassName" type="java.lang.String" column="rank_class_name" />
         <property name="points" type="java.lang.String" column="points" />
     </class>
 </hibernate-mapping>

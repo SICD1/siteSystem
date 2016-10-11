@@ -5,9 +5,11 @@
 
 <hibernate-mapping package="com.sicdlab.project.dto">
     <class name="Friends" table="tb_friends">
-        <id name="friendID" type="java.lang.String" column="friendID">
+        <id name="friendID" type="java.lang.String" column="friendid">
             <generator class="uuid"/>
         </id>
-        <property name="friendsTime" type="java.util.Date" column="friendsTime" />
+        <property name="friendsTime" type="java.util.Date" column="friends_time" />
+        <!-- 多个好友对应一个用户 -->
+        <many-to-one name="user" column="userid"/>
     </class>
 </hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.sicdlab.project.dto">
+    <class name="Album" table="tb_album">
+        <id name="albumID" type="java.lang.String" column="albumid">
+            <generator class="uuid"/>
+        </id>
+        <property name="albumClassfyName" type="java.lang.String" column="album_classfy_name" />
+        <property name="albumCreateTime" type="java.util.Date" column="album_create_time" />
+        <!-- 一个相册对应多个照片关系-->
+        <set name="pictures" cascade="all" inverse="true">
+            <key column="albumid"/>
+            <one-to-many class="Pictures"/>
+        </set>
+        <!-- 多个相册对应一个用户关系-->
+        <many-to-one name="user"  column="userid"/>
+    </class>
+</hibernate-mapping>

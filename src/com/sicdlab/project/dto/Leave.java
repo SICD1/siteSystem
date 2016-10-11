@@ -10,7 +10,8 @@ public class Leave {
     private String leaveContent;
     private Date   leaveTime;
     private Boolean leaveShow;
-
+    //多个留言表对应一个用户表
+    private User user;
     public String getLeaveID() {
         return leaveID;
     }
@@ -42,4 +43,5 @@ public class Leave {
     public void setLeaveShow(Boolean leaveShow) {
         this.leaveShow = leaveShow;
     }
+
 }

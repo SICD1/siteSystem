@@ -1,5 +1,8 @@
 package com.sicdlab.project.dto;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by maninit on 2016/10/9.
  */
@@ -8,6 +11,9 @@ public class CommonHomePage {
     private   String homePageName;
     private   String homePageDescrible;
     private   String homePageURL;
+    //多个公共主页表对应一个用户
+    public User user;
+
 
     public String getHomePageID() {
         return homePageID;
@@ -39,5 +45,13 @@ public class CommonHomePage {
 
     public void setHomePageURL(String homePageURL) {
         this.homePageURL = homePageURL;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

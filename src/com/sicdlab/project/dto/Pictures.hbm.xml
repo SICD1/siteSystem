@@ -5,14 +5,21 @@
 
 <hibernate-mapping package="com.sicdlab.project.dto">
     <class name="Pictures" table="tb_pictures">
-        <id name="pictureID" type="java.lang.String" column="pictureID">
+        <id name="pictureID" type="java.lang.String" column="pictureid">
             <generator class="uuid"/>
         </id>
-        <property name="pictureName" type="java.lang.String" column="pictureName" />
-        <property name="pictureDescrible" type="java.lang.String" column="pictureDescrible" />
-        <property name="pictureURL" type="java.lang.String" column="pictureURL" />
-        <property name="uploadTime" type="java.util.Date" column="uploadTime" />
-        <property name="picturesShow" type="java.lang.Boolean" column="picturesShow" />
-        <property name="browseNumber" type="java.lang.Integer" column="browseNumber" />
+        <property name="pictureName" type="java.lang.String" column="picture_name" />
+        <property name="pictureDescrible" type="java.lang.String" column="picture_describle" />
+        <property name="pictureURL" type="java.lang.String" column="pictureurl" />
+        <property name="uploadTime" type="java.util.Date" column="upload_time" />
+        <property name="picturesShow" type="java.lang.Boolean" column="pictures_show" />
+        <property name="browseNumber" type="java.lang.Integer" column="browse_number" />
+        <!-- 一个照片对应多个评论关系-->
+        <set name="comments" cascade="all" inverse="true">
+            <key column="pictureid"/>
+            <one-to-many class="Comment"/>
+        </set>
+        <!-- 多个照片对应一个相册关系-->
+        <many-to-one name="album"  column="albumid"/>
     </class>
 </hibernate-mapping>

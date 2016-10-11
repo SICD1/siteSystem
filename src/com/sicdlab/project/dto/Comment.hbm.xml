@@ -5,13 +5,20 @@
 
 <hibernate-mapping package="com.sicdlab.project.dto">
     <class name="Comment" table="tb_comment">
-        <id name="commentID" type="java.lang.String" column="commentID">
+        <id name="commentID" type="java.lang.String" column="commentid">
             <generator class="uuid"/>
         </id>
-        <property name="commentContent" type="java.lang.String" column="commentContent" />
-        <property name="commentTime" type="java.util.Date" column="commentTime" />
-        <property name="commentPraiseNumber" type="java.lang.Integer" column="commentPraiseNumber" />
-        <property name="parentID" type="java.lang.String" column="parentID" />
-
+        <property name="commentContent" type="java.lang.String" column="comment_content" />
+        <property name="commentTime" type="java.util.Date" column="comment_time" />
+        <property name="commentPraiseNumber" type="java.lang.Integer" column="comment_praise_number" />
+        <property name="parentID" type="java.lang.String" column="parentid" />
+        <!-- 多个评论对应一个用户关系-->
+        <many-to-one name="user"  column="userid"/>
+        <!-- 多个评论对应一个博客关系-->
+        <many-to-one name="blog"  column="blogid"/>
+        <!-- 多个评论对应一个照片关系-->
+        <many-to-one name="picture"  column="pictureid"/>
+        <!-- 多个评论对应一个新鲜关系-->
+        <many-to-one name="novelty"  column="noveltyid"/>
     </class>
 </hibernate-mapping>

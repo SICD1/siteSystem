@@ -5,11 +5,11 @@
 
 <hibernate-mapping package="com.sicdlab.project.dto">
     <class name="Leave" table="tb_leave">
-        <id name="leaveID" type="java.lang.String" column="leaveID">
+        <id name="leaveID" type="java.lang.String" column="leaveid">
             <generator class="uuid"/>
         </id>
-        <property name="leaveContent" type="java.lang.String" column="leaveContent" />
-        <property name="leaveTime" type="java.util.Date" column="leaveTime" />
-        <property name="leaveShow" type="java.lang.Boolean" column="leaveShow" />
+        <property name="leaveContent" type="java.lang.String" column="leave_content" />
+        <property name="leaveTime" type="java.util.Date" column="leave_time" />
+        <property name="leaveShow" type="java.lang.Boolean" column="leave_show" />
     </class>
 </hibernate-mapping>

@@ -5,10 +5,12 @@
 
 <hibernate-mapping package="com.sicdlab.project.dto">
     <class name="Chat" table="tb_chat">
-        <id name="chatID" type="java.lang.String" column="chatID">
+        <id name="chatID" type="java.lang.String" column="chatid">
             <generator class="uuid"/>
         </id>
-        <property name="chatContent" type="java.lang.String" column="chatContent" />
-        <property name="chatTime" type="java.util.Date" column="chatTime" />
+        <property name="chatContent" type="java.lang.String" column="chat_content" />
+        <property name="chatTime" type="java.util.Date" column="chat_time" />
+        <!-- 多个聊天表对应一个用户表关系-->
+        <many-to-one name="user"  column="userid"/>
     </class>
 </hibernate-mapping>

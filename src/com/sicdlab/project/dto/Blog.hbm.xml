@@ -5,17 +5,25 @@
 
 <hibernate-mapping package="com.sicdlab.project.dto">
     <class name="Blog" table="tb_blog">
-        <id name="blogID" type="java.lang.String" column="blogID">
+        <id name="blogID" type="java.lang.String" column="blogid">
             <generator class="uuid"/>
         </id>
-        <property name="blogContent" type="java.lang.String" column="blogContent" />
-        <property name="blogTitle" type="java.lang.String" column="blogTitle" />
-        <property name="blogTime" type="java.util.Date" column="blogTime" />
-        <property name="praiseNumber" type="java.lang.Integer" column="praiseNumber" />
-        <property name="commentNumber" type="java.lang.Integer" column="commentNumber" />
-        <property name="forwardNumber" type="java.lang.Integer" column="forwardNumber" />
-        <property name="shareNumber" type="java.lang.Integer" column="shareNumber" />
-        <property name="blogShow" type="java.lang.Boolean" column="blogShow" />
-        <property name="blogClassifyName" type="java.lang.String" column="blogClassifyName" />
+        <property name="blogContent" type="java.lang.String" column="blog_content" />
+        <property name="blogTitle" type="java.lang.String" column="blog_title" />
+        <property name="blogTime" type="java.util.Date" column="blog_time" />
+        <property name="praiseNumber" type="java.lang.Integer" column="praise_number" />
+        <property name="commentNumber" type="java.lang.Integer" column="comment_number" />
+        <property name="forwardNumber" type="java.lang.Integer" column="forward_number" />
+        <property name="shareNumber" type="java.lang.Integer" column="share_number" />
+        <property name="blogShow" type="java.lang.Boolean" column="blog_show" />
+        <property name="blogClassifyName" type="java.lang.String" column="blog_Classify_name" />
+        <!-- 一个博客对应多个评论关系-->
+        <set name="comments" cascade="all" inverse="true">
+            <key column="blogid"/>
+            <one-to-many class="Comment"/>
+        </set>
+        <!-- 多个博客对应一个用户关系-->
+        <many-to-one name="user"  column="userid"/>
     </class>
+
 </hibernate-mapping>

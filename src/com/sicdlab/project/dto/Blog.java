@@ -1,6 +1,8 @@
 package com.sicdlab.project.dto;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by maninit on 2016/10/9.
@@ -16,6 +18,12 @@ public class Blog {
     private  Integer  shareNumber;
     private  Boolean  blogShow;
     private  String   blogClassifyName;
+
+    //多个博客对应一个用户
+    private User user;
+    //一个博客拥有多个评论
+    private Set<Comment> comments=new HashSet<Comment>();
+
 
     public String getBlogID() {
         return blogID;
@@ -95,5 +103,21 @@ public class Blog {
 
     public void setBlogClassifyName(String blogClassifyName) {
         this.blogClassifyName = blogClassifyName;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 }

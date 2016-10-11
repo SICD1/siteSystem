@@ -5,18 +5,25 @@
 
 <hibernate-mapping package="com.sicdlab.project.dto">
     <class name="Novelty" table="tb_novelty">
-        <id name="noveltyID" type="java.lang.String" column="noveltyID">
+        <id name="noveltyID" type="java.lang.String" column="noveltyid">
             <generator class="uuid"/>
         </id>
-        <property name="noveltyContent" type="java.lang.String" column="noveltyContent" />
-        <property name="noveltyTime" type="java.util.Date" column="noveltyTime" />
-        <property name="noveltyPictureURL" type="java.lang.String" column="noveltyPictureURL" />
-        <property name="noveltyHref" type="java.lang.String" column="noveltyHref" />
-        <property name="noveltyShow" type="java.lang.Boolean" column="noveltyShow" />
-        <property name="noveltyPraiseNumber" type="java.lang.Integer" column="noveltyPraiseNumber" />
-        <property name="noveltyForwardNumber" type="java.lang.Integer" column="noveltyForwardNumber" />
-        <property name="noveltyReadNumber" type="java.lang.Integer" column="noveltyReadNumber" />
-        <property name="noveltyCommentNumber" type="java.lang.Integer" column="noveltyCommentNumber" />
-        <property name="noveltyShareNumber" type="java.lang.Integer" column="noveltyShareNumber" />
+        <property name="noveltyContent" type="java.lang.String" column="novelty_content" />
+        <property name="noveltyTime" type="java.util.Date" column="novelty_time" />
+        <property name="noveltyPictureURL" type="java.lang.String" column="novelty_pictureURL" />
+        <property name="noveltyHref" type="java.lang.String" column="novelty_href" />
+        <property name="noveltyShow" type="java.lang.Boolean" column="novelty_show" />
+        <property name="noveltyPraiseNumber" type="java.lang.Integer" column="novelty_praise_number" />
+        <property name="noveltyForwardNumber" type="java.lang.Integer" column="novelty_forward_number" />
+        <property name="noveltyReadNumber" type="java.lang.Integer" column="novelty_read_number" />
+        <property name="noveltyCommentNumber" type="java.lang.Integer" column="novelty_comment_number" />
+        <property name="noveltyShareNumber" type="java.lang.Integer" column="novelty_share_number" />
+        <!-- 一个新鲜事对应多个评论关系-->
+        <set name="comments" cascade="all" inverse="true">
+            <key column="noveltyid"/>
+            <one-to-many class="Comment"/>
+        </set>
+        <!-- 多个新鲜事对应一个用户关系-->
+        <many-to-one name="user"  column="userid"/>
     </class>
 </hibernate-mapping>

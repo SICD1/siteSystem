@@ -1,6 +1,8 @@
 package com.sicdlab.project.dto;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by maninit on 2016/10/9.
@@ -17,6 +19,11 @@ public class Novelty {
     private  Integer noveltyReadNumber;
     private  Integer noveltyCommentNumber;
     private  Integer noveltyShareNumber;
+    //多个新鲜事对应一个用户
+    private  User user;
+    //一个新鲜事对应多个评论
+    private Set<Comment> comments= new HashSet<Comment>();
+
 
     public String getNoveltyID() {
         return noveltyID;
@@ -104,5 +111,21 @@ public class Novelty {
 
     public void setNoveltyShareNumber(Integer noveltyShareNumber) {
         this.noveltyShareNumber = noveltyShareNumber;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 }

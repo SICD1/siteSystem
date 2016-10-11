@@ -4,17 +4,16 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.sicdlab.project.dto">
-    <class name="Role" table="tb_role">
-        <id name="roleID" type="java.lang.String" column="roleid">
+    <class name="Privilege" table="tb_privilege">
+        <id name="privilegeID" type="java.lang.String" column="privilegeid">
             <generator class="uuid"/>
         </id>
-        <property name="roleName" type="java.lang.String" column="role_name" />
-        <!-- 一个角色对应多个角色中间表关系-->
+        <property name="privilegeType" type="java.lang.String" column="privilege_type" />
+        <!-- 一个权限表对应多个角色权限中间表-->
         <set name="role_privileges" cascade="all" inverse="true">
-            <key column="roleid"/>
+            <key column="privilegeid"/>
             <one-to-many class="Role_Privilege"/>
         </set>
-        <!-- 一个角色对应一个用户表关系-->
-        <one-to-one name="user" />
     </class>
+
 </hibernate-mapping>
